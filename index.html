@@ -25,11 +25,10 @@
             max-width: 100%;
             border-radius: 10px;
             background-color: white;
-            margin: auto;
             padding: 10px;
             justify-content: center;
             gap: 10px;
-            margin-top: 100px;
+            margin: 20px auto;
             box-shadow: 1px 1px 10px 0.5px;
         }
 
@@ -44,10 +43,13 @@
         }
 
         .input {
+            margin-top: 20px;
+            margin-bottom: 20px;
             flex-wrap: wrap;
             display: flex;
             max-width: 100%;
             justify-content: center;
+            flex-grow: 1;
         }
 
         .input button{
@@ -55,7 +57,7 @@
             height: 50px;
             font-size:x-large;
             background-color: whitesmoke;
-            border-radius: 10px;
+            border-radius: 50px;
             border: 0;
             box-shadow: 0px 0px 2px 0.5px;
             transition: 0.1s ease-in-out;
@@ -69,7 +71,7 @@
         .input .angka {
             flex-wrap: wrap;
             display: flex;
-            gap: 10px;
+            gap: 20px;
             width: 200px;
             justify-content: center;
         }
@@ -77,11 +79,13 @@
     </style>
 </head>
 <body>
-    <h1 style="margin: auto; width: fit-content; padding: 10px;">Poor Calculator</h1>
+    <h1 style="margin: 20px auto; width: fit-content; padding: 10px;">Poor Calculator</h1>
 
-    <div class="kontainer">
-        <div class="output">
-
+    <div class="kontainer" id="calc">
+        <div class="output" style="font-size:x-large; display: flex; justify-content: right; align-items: center; padding-right: 10px;" >
+            <script >
+                document.writeln("1+1");
+            </script>
         </div>
 
         <div class="input">
@@ -106,6 +110,11 @@
         </div>
     </div>
 
+    <script>
+        for(let i = 1; i <= 10; i++){
+           
+        }
+    </script>
 
     <footer></footer>
 </body>

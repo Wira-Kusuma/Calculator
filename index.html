@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <!-- favicon -->
+    <link rel="icon" href="img/ios-calculator-9.png" type="image/x-icon">
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+}
+
+        body {
+            background: linear-gradient(to bottom, rgb(29, 161, 194), rgb(201, 201, 201));
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            max-width: 100%;
+            height: 100vh;
+        }
+
+        .kontainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: fit-content;
+            height: fit-content;
+            max-width: 100%;
+            border-radius: 10px;
+            background-color: #ffffff;
+            padding: 20px 30px;
+            gap: 30px;
+            margin: 20px auto;
+            box-shadow: rgba(0, 0, 0, 0.2);
+        }
+
+        .output {
+            width:100%;
+            height: 50px;
+            max-width: 100%;
+            border: 1px solid;
+            border-radius: 10px;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            gap: 5px;
+            background-color: #e6f2ff;
+            box-shadow: 0px 0px 2px 0.5px;
+            border: 0;
+        }
+
+        .output p {
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .input {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            gap: 10px;
+        }
+
+        .input button{
+            width: 50px;
+            height: 50px;
+            font-size:x-large;
+            background-color: #e6f2ff;
+            color: #003366;
+            border-radius: 50px;
+            border: 0;
+            box-shadow: 0px 0px 2px 0.5px;
+            transition: 0.1s ease-in-out;
+        }
+
+        .input button:active {
+            background-color: darkgray;
+            transform: scale(0.8);
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 style="margin: 20px auto; width: fit-content; padding: 10px;">Poor Calculator</h1>
+
+    <div class="kontainer" id="calc">
+        <div class="output" >
+            <p>1 + 1 = 11</p>
+        </div>
+
+        <div class="input">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>x</button>
+            <button>/</button>
+            <button>+</button>
+            <button>-</button>
+            <button>.</button>
+            <button>=</button>
+        </div>
+    </div>
+
+    <script>
+        for(let i = 1; i <= 10; i++){
+           
+        }
+    </script>
+
+    <footer></footer>
+</body>
+</html>

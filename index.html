@@ -22,6 +22,9 @@
             overflow-x: hidden;
             max-width: 100%;
             height: 100vh;
+            display: flex;
+            place-items: center;
+            flex-direction: column;
         }
 
         .kontainer {
@@ -37,7 +40,7 @@
             background-color: #ffffff;
             padding: 20px 30px;
             gap: 30px;
-            margin: 20px auto;
+            margin: 10px auto;
             box-shadow: rgba(0, 0, 0, 0.2);
         }
 
@@ -50,7 +53,6 @@
             display: flex;
             justify-content: right;
             align-items: center;
-            gap: 5px;
             background-color: #e6f2ff;
             box-shadow: 0px 0px 2px 0.5px;
             border: 0;
@@ -58,6 +60,7 @@
 
         .output p {
             padding: 0 10px;
+            color: #003366;
             font-weight: bold;
             font-size: larger;
         }
@@ -66,7 +69,8 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
+            column-gap: 10px;
+            row-gap: 10px;
         }
 
         .input button{
@@ -94,7 +98,8 @@
 
     <div class="kontainer" id="calc">
         <div class="output" >
-            <p>1 + 1 = 11</p>
+            <p id="display">0</p>
+
         </div>
 
         <div class="input">
@@ -107,20 +112,54 @@
             <button>7</button>
             <button>8</button>
             <button>9</button>
+            <button>0</button>
             <button>x</button>
             <button>/</button>
             <button>+</button>
             <button>-</button>
             <button>.</button>
+            <button>C</button>
+            <button style="font-size: medium;">DEL</button>
             <button>=</button>
+            
         </div>
     </div>
 
     <script>
-        for(let i = 1; i <= 10; i++){
-           
-        }
-    </script>
+        const display = document.getElementById("display");
+        const buttons = document.querySelectorAll(".input button");
+      
+        let expression = "";
+      
+        buttons.forEach(button => {
+          button.addEventListener("click", () => {
+            const value = button.textContent;
+      
+            if (value === "=") {
+              try {
+                const result = eval(expression.replace(/x/g, '*'));
+                display.textContent = result;
+                expression = result.toString();
+              } catch {
+                display.textContent = "Ngotak dikit lah kalo input";
+                expression = "";
+              }
+            } else if (value === "C") {
+              expression = "";
+              display.textContent = "0";
+            } else if (value === "DEL") {
+              expression = expression.slice(0, -1);
+              display.textContent = expression || "0";
+            } else {
+              expression += value;
+              display.textContent = expression;
+            }
+
+          });
+        });
+      </script>
+      
+      
 
     <footer></footer>
 </body>

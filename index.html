@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,99 +8,15 @@
     <!-- favicon -->
     <link rel="icon" href="img/6853e1403199971c815a945815840b2a.jpg" type="image/x-icon">
 
-    <style>
-        * {
-            font-family: Arial, Helvetica, sans-serif;
-}
-
-        body {
-            background: linear-gradient(to bottom, rgb(29, 161, 194), rgb(201, 201, 201));
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size:cover;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            max-width: 100%;
-            height: 100vh;
-            display: flex;
-            place-items: center;
-            flex-direction: column;
-        }
-
-        .kontainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: fit-content;
-            height: fit-content;
-            max-width: 100%;
-            border-radius: 10px;
-            background-color: #ffffff;
-            padding: 20px 30px;
-            gap: 30px;
-            margin: 10px auto;
-            box-shadow: rgba(0, 0, 0, 0.2);
-        }
-
-        .output {
-            width:100%;
-            height: 50px;
-            max-width: 100%;
-            border: 1px solid;
-            border-radius: 10px;
-            display: flex;
-            justify-content: right;
-            align-items: center;
-            background-color: #e6f2ff;
-            box-shadow: 0px 0px 2px 0.5px;
-            border: 0;
-        }
-
-        .output p {
-            padding: 0 10px;
-            color: #003366;
-            font-weight: bold;
-            font-size: larger;
-        }
-
-        .input {
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            column-gap: 10px;
-            row-gap: 10px;
-        }
-
-        .input button{
-            width: 50px;
-            height: 50px;
-            font-size:x-large;
-            background-color: #e6f2ff;
-            color: #003366;
-            border-radius: 50px;
-            border: 0;
-            box-shadow: 0px 0px 2px 0.5px;
-            transition: 0.1s ease-in-out;
-        }
-
-        .input button:active {
-            background-color: darkgray;
-            transform: scale(0.8);
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1 style="margin: 20px auto; width: fit-content; padding: 10px;">Poor Calculator</h1>
+    <h1 style="margin: 20px auto; width: fit-content; padding: 10px;">Calculator</h1>
 
     <div class="kontainer" id="calc">
-        <div class="output" >
+        <div class="output">
             <p id="display">0</p>
-
         </div>
 
         <div class="input">
@@ -121,46 +38,14 @@
             <button>C</button>
             <button style="font-size: medium;">DEL</button>
             <button>=</button>
-            
+
         </div>
     </div>
 
-    <script>
-        const display = document.getElementById("display");
-        const buttons = document.querySelectorAll(".input button");
-      
-        let expression = "";
-      
-        buttons.forEach(button => {
-          button.addEventListener("click", () => {
-            const value = button.textContent;
-      
-            if (value === "=") {
-              try {
-                const result = eval(expression.replace(/x/g, '*'));
-                display.textContent = result;
-                expression = result.toString();
-              } catch {
-                display.textContent = "Ngotak dikit lah kalo input";
-                expression = "";
-              }
-            } else if (value === "C") {
-              expression = "";
-              display.textContent = "0";
-            } else if (value === "DEL") {
-              expression = expression.slice(0, -1);
-              display.textContent = expression || "0";
-            } else {
-              expression += value;
-              display.textContent = expression;
-            }
+    <script src="script.js"></script>
 
-          });
-        });
-      </script>
-      
-      
 
     <footer></footer>
 </body>
+
 </html>
